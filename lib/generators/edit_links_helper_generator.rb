@@ -2,7 +2,7 @@ class HandyGenerators::EditLinksHelperGenerator < Rails::Generators::NamedBase
   source_root File.expand_path('templates/edit_delete_links', __dir__)
   class_option :pundit, type: :boolean, default: true
 
-  def generate_add
+  def generate
     generate_edit_delete_links_helper
     if options['pundit']
       generate_edit_delete_links_partial
