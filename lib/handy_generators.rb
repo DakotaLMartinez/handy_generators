@@ -1,5 +1,6 @@
 require "handy_generators/version"
 
 module HandyGenerators
-  # Your code goes here...
+  require "rails/generators"
+  require_relative "./generators/edit_links_helper_generator"
 end
