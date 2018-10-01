@@ -1,0 +1,12 @@
+Description:
+    This generator will add a helper and a partial for displaying edit and delete links 
+    for a record. This uses pundit by default to check whether a user should be able to 
+    edit and/or delete the record before displaying the link. If you'd like to always 
+    display these links when you use the helper in the view or handle the logic yourself, simply add --pundit false to your command.
+
+Example:
+    rails generate edit_links_helper add [--pundit false]
+
+    This will create:
+        app/helpers/edit_delete_links_helper.rb
+        app/views/shared/_edit_delete_links.html.erb

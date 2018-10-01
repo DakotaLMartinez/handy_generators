@@ -1,0 +1,13 @@
+module EditDeleteLinksHelper
+  def delete_record_link(record:, classes: '')
+    link_to "Delete", Rails.application.routes.url_helpers.public_send("#{record.class.name.downcase}_path",record), method: :delete, data: { confirm: "Are you sure you want to delete this #{record.class.name.downcase}?" }, class: "#{classes}"
+  end
+
+  def edit_record_link(record:, classes: '')
+    link_to "Edit", Rails.application.routes.url_helpers.public_send("edit_#{record.class.name.downcase}_path",record), class: "#{classes}"
+  end
+
+  def edit_links(record:, edit_classes: '', delete_classes: '')
+    render partial: 'shared/edit_delete_links', locals: { record: record, edit_classes: edit_classes, delete_classes: delete_classes}
+  end
+end

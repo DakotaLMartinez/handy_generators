@@ -1,0 +1,4 @@
+<div class="edit-links">
+  <%= edit_record_link(record: record, classes: edit_classes) if policy(record).edit? %>
+  <%= delete_record_link(record: record, classes: delete_classes) if policy(record).destroy? %>
+</div>
