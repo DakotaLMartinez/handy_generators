@@ -1,8 +1,6 @@
 # HandyGenerators
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/handy_generators`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This gem adds some handy generators to your Rails app. 
 
 ## Installation
 
@@ -22,7 +20,44 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### Edit Links Helper
+
+#### Generators
+
+```
+rails generate handy_generators:edit_links_helper
+```
+
+This generator will add a helper and a partial for displaying edit and
+delete links for a record. This uses pundit by default to check
+whether a user should be able to edit and/or delete the record before
+displaying the link. If you'd like to always display these links when
+you use the helper in the view or handle the logic yourself, simply
+add --pundit false to your command.
+
+```
+rails generate handy_generators:edit_links_helper --pundit false
+```
+
+#### Helpers
+
+`edit_links(record:, edit_classes: '', delete_classes: '')`
+
+The `edit_links` helper receives three parameters `record`, `edit_classes`, 
+and `delete_classes`. Record is the only required parameter, 
+`edit_classes` and `delete_classes` will be empty by default, if you'd 
+like to add classes you can pass them as parameters to the helper. The 
+default helper uses pundit, and it will check if the logged in user has
+permission to edit or delete the record before displaying the links. If
+not, it will display the edit or delete links to all users.
+
+`edit_record_link(record:, classes: '')`
+
+The `edit_record_link` helper will just display an edit link, it won't check if the user has permission before displaying the link. Classes that you pass in as a parameter will be applied to the link.
+
+`delete_record_link(record:, classes: '')`
+
+The `delete_record_link` helper will display just display a delete link, with a confirm. It also doesn't check if the user has permission before displaying the link. Classes that you pass in as a parameter will be applied to the link.
 
 ## Development
 
