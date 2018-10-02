@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    handy_generators (0.1.10)
+    handy_generators (0.1.11)
       rails (> 4.0)
 
 GEM
