@@ -10,44 +10,44 @@ Gem::Specification.new do |spec|
   spec.email         = ["dakotaleemusic@gmail.com"]
 
   spec.summary       = %q{Add rails generators to add a helper to add edit and delete links that work for multiple resources}
-  spec.description   = %q{
+  spec.description   = %Q{
     ## Usage
 
 ### Edit Links Helper
 
-```
+
 rails generate handy_generators:edit_links_helper
-```
-\n
+
+\r\n
 This generator will add a helper and a partial for displaying edit and
 delete links for a record. This uses pundit by default to check
 whether a user should be able to edit and/or delete the record before
 displaying the link. If you'd like to always display these links when
 you use the helper in the view or handle the logic yourself, simply
 add --pundit false to your command.
-\n
-```
+\r\n
+
 rails generate handy_generators:edit_links_helper --pundit false
-```
+
 \n
-#### Helpers
+\r\n
 
-`edit_links(record:, edit_classes: '', delete_classes: '')`
-
-The `edit_links` helper receives three parameters `record`, `edit_classes`, 
+edit_links(record:, edit_classes: '', delete_classes: '')
+\r\n
+The `edit_links` helper receives three parameters `record`, `edit_classes`,
 and `delete_classes`. Record is the only required parameter, 
 `edit_classes` and `delete_classes` will be empty by default, if you'd 
 like to add classes you can pass them as parameters to the helper. The 
 default helper uses pundit, and it will check if the logged in user has
 permission to edit or delete the record before displaying the links. If
 not, it will display the edit or delete links to all users.
-
+\r\n
 `edit_record_link(record:, classes: '')`
-
+\r\n
 The `edit_record_link` helper will just display an edit link, it won't check if the user has permission before displaying the link. Classes that you pass in as a parameter will be applied to the link.
-
+\r\n
 `delete_record_link(record:, classes: '')`
-
+\r\n
 The `delete_record_link` helper will display just display a delete link, with a confirm. It also doesn't check if the user has permission before displaying the link. Classes that you pass in as a parameter will be applied to the link.
   }
   spec.homepage      = "https://github.com/DakotaLMartinez/handy_generators"
