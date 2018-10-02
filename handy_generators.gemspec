@@ -15,23 +15,21 @@ Gem::Specification.new do |spec|
 
 ### Edit Links Helper
 
-#### Generators
-
 ```
 rails generate handy_generators:edit_links_helper
 ```
-
+\n
 This generator will add a helper and a partial for displaying edit and
 delete links for a record. This uses pundit by default to check
 whether a user should be able to edit and/or delete the record before
 displaying the link. If you'd like to always display these links when
 you use the helper in the view or handle the logic yourself, simply
 add --pundit false to your command.
-
+\n
 ```
 rails generate handy_generators:edit_links_helper --pundit false
 ```
-
+\n
 #### Helpers
 
 `edit_links(record:, edit_classes: '', delete_classes: '')`
