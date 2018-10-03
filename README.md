@@ -43,7 +43,7 @@ Running this generator will add the following helpers to your Rails app.
 
 `edit_links(record:, edit_classes: '', delete_classes: '')`
 
-The `edit_links` helper receives three parameters `record`, `edit_classes`, and `delete_classes`. Record is the only required parameter, `edit_classes` and `delete_classes` will be empty by default, if you'd like to add classes you can pass them as parameters to the helper. The default helper uses pundit, and it will check if the logged in user haspermissionto edit or delete the record before displaying the links. If not, it will display the edit or delete links to all users.
+The `edit_links` helper receives three parameters `record`, `edit_classes`, and `delete_classes`. Record is the only required parameter, `edit_classes` and `delete_classes` will be empty by default, if you'd like to add classes you can pass them as parameters to the helper. The default helper uses pundit, and it will check if the logged in user has permission to edit or delete the record before displaying the links. If not, it will display the edit or delete links to all users.
 
 `edit_record_link(record:, classes: '')`
 
